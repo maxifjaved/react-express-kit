@@ -19,12 +19,12 @@ module.exports = merge(commonConfig, {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: resolve(__dirname, '..', 'client', 'index.html'),
+      template: resolve(__dirname, 'client', 'index.html'),
       //favicon: resolve(__dirname, '..', 'src', 'client', 'static', 'favicon.png'),
       alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin({
-      outputPath: resolve(__dirname, '..', 'build-dev', 'client')
+      outputPath: resolve(__dirname, 'build-dev', 'client')
     })
   ]
 });

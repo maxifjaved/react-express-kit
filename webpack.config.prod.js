@@ -15,7 +15,7 @@ module.exports = merge(commonConfig, {
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
-      template: resolve(__dirname, '..', 'client', 'index.html'),
+      template: resolve(__dirname, 'client', 'index.html'),
       //favicon: resolve(__dirname, '..', 'src', 'client', 'static', 'favicon.png'),
       minify: {
         removeComments: true,
