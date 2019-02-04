@@ -1,4 +1,5 @@
 {
+  "name": "react-express-kit",
   "version": "1.0.0",
   "author": {
     "name": "Muhammad Asif Javed",
@@ -20,11 +21,11 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --watch server --exec babel-node server --source-maps",
-    "start": "cross-env NODE_ENV=production node build/server",
+    "start": "cross-env NODE_ENV=production node build",
     "prebuild": "rimraf build",
     "build": "npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack -p --progress --config=webpack.config.prod.js",
-    "build:server": "babel server -D --out-dir build/server"
+    "build:server": "babel server -D --out-dir build"
   },
   "postcss": {},
   "devDependencies": {
