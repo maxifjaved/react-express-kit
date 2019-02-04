@@ -1,28 +1,32 @@
 {
-  "name": "react-express-kit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development node server",
-    "start": "cross-env NODE_ENV=production node build/server",
-    "prebuild": "rimraf build",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack -p --progress --config=webpack.config.prod.js",
-    "build:server": "copyfiles -a -u 1 server/**/**/* build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Muhammad Asif Javed",
+    "email": "axif.javed@gmail.com",
+    "url": "https://github.com/maxifjaved"
+  },
+  "description": "React Express Kit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxifjaved/react-express-kit/issues"
+  },
+  "homepage": "https://github.com/maxifjaved/react-express-kit#README",
+  "engines": {
+    "node": "8.11.1"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:maxifjaved/react-express-kit.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maxifjaved/react-express-kit/issues"
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node server",
+    "start": "cross-env NODE_ENV=production node build/server",
+    "prebuild": "rimraf build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production webpack -p --progress --config=config/webpack.config.prod.js",
+    "build:server": "copyfiles -a -u 1 server/**/**/* build"
   },
-  "homepage": "https://github.com/maxifjaved/react-express-kit#README",
+  "postcss": {},
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.2.2",
