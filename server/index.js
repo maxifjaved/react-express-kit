@@ -10,6 +10,7 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const compression = require('compression');
 
 
 const app = express();
@@ -39,7 +40,7 @@ if (isDevelopment) {
   app.get('*', (req, res) => res.sendFile(resolve(__dirname, '..', 'build-dev', 'client', 'index.html')));
 
 } else {
-  const clientBuildPath = resolve(__dirname, 'client');
+  const clientBuildPath = resolve(__dirname, '..', 'client');
 
   app.use(compression());
   app.use('/', express.static(clientBuildPath));
