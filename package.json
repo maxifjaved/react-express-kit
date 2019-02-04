@@ -19,17 +19,18 @@
     "url": "git+ssh://git@github.com:maxifjaved/react-express-kit.git"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node server",
+    "dev": "cross-env NODE_ENV=development nodemon --watch server --exec babel-node server --source-maps",
     "start": "cross-env NODE_ENV=production node build/server",
     "prebuild": "rimraf build",
     "build": "npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack -p --progress --config=webpack.config.prod.js",
-    "build:server": "copyfiles -a -u 1 server/**/**/* build/server"
+    "build:server": "babel server -D --out-dir build/server"
   },
   "postcss": {},
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.2.2",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "7.3.0",
     "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.1",
@@ -60,6 +61,7 @@
     "intl": "1.2.5",
     "material-ui": "0.20.2",
     "node-sass": "4.11.0",
+    "nodemon": "^1.18.9",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "prettier": "1.16.1",
