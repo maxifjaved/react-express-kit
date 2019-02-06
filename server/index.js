@@ -1,7 +1,7 @@
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
-// const setupApiRoutes = require('./middlewares/api');
+const setupApiRoutes = require('./middlewares/api');
 const logger = require('./logger');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -32,7 +32,7 @@ app.use(logger.expressMiddleware);
 app.use(bodyParser.json());
 
 // application routes
-// setupApiRoutes(app);
+setupApiRoutes(app);
 setupAppRoutes(app);
 
 http.createServer(app).listen(process.env.HTTP_PORT, () => {

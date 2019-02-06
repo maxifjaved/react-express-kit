@@ -1,14 +1,16 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import AppLayout from 'containers/AppLayout';
+// import LoginForm from 'containers/LoginForm';
 import LoginForm from 'containers/LoginForm';
 
-export default function() {
+export default function () {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/login" name="login" component={LoginForm} />
+        <Route path="/wdc" name="wdc" component={LoginForm} />
         <Route path="/" name="home" component={AppLayout} />
       </Switch>
     </BrowserRouter>
